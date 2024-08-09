@@ -1,0 +1,4 @@
+# Ignorar la carpeta node_modules
+# Esta carpeta contiene las dependencias del proyecto, que se pueden reinstalar fácilmente usando el archivo package.json
+# La carpeta node_modules puede ser muy grande, a menudo con miles de archivos. Incluirla en elrepositorio haría que este sea innecesariamente pesado y lento
+# node_modules/
