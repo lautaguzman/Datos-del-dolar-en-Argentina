@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/5829e3c354.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS PROPIO -->
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>Calculadora de dolar</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="nav-inicio" id="inicio">
+          <i class="fa-solid fa-dollar-sign fa-2xl" style="color: #ffffff"></i>
+          <h3>Inicio</h3>
+        </div>
+        <div class="open-items" id="openItems">
+          <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff"></i>
+        </div>
+        <ul class="nav-items" id="navItems">
+          <button class="close-items" id="closeItems">
+            <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff"></i>
+          </button>
+          <li>dólar oficial</li>
+          <li>dólar blue</li>
+          <li>dólar bolsa</li>
+          <li>dólar ccl</li>
+          <li>dólar crypto</li>
+          <li>dólar solidario</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="container-values" id="containerValues"></section>
+    </main>
+    <footer id="footer"></footer>
+    <script src="./app.js"></script>
+    <script src="./page/nav.js"></script>
+    <script src="./page/footer.js"></script>
+  </body>
+</html>
