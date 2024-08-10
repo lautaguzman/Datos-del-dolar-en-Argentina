@@ -53,3 +53,66 @@ footer {
   width: 100%;
   height: 15vh;
 }
+
+/* MEDIA QUERY PARA DISPOSITIVO MOVIL */
+@media (min-width: 320px) and (max-width: 576px) {
+  /* NAV */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .nav-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+  }
+  .nav-inicio h3 {
+    display: none;
+  }
+  .open-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+  }
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(0, 99, 92);
+    position: absolute;
+    z-index: 10;
+    margin-left: 60%;
+    top: 10vh;
+    width: 40%;
+    height: 90vh;
+  }
+  .close-items {
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  .nav-items li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: rgb(0, 99, 92);
+    border-radius: 15px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    list-style-type: none;
+    width: 80%;
+    height: 40px;
+  }
+}
