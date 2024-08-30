@@ -33,7 +33,7 @@ header {
 /* MAIN */
 main {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   border: solid 2px blue;
   width: 100%;
@@ -42,8 +42,30 @@ main {
 
 .container-values {
   border: solid 4px rgb(255, 132, 0);
-  width: 80%;
-  height: 30%;
+  width: 40%;
+  height: 80%;
+}
+.dolar-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: solid 4px white; */
+  width: 40%;
+  height: 80%;
+}
+.dolar-info p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.3;
+  width: 100%;
+  height: 100%;
 }
 
 /* FOOTER */
@@ -334,4 +356,8 @@ footer {
     color: #005b4a;
     outline: none;
   }
+
+  /* MAIN */
+
+  /*  */
 }
