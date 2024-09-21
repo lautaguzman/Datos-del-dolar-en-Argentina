@@ -17,5 +17,5 @@ closeItems.addEventListener("click", () => {
 
 // Función para recargar la página
 function reloadPage() {
-  location.reload(); // Recarga la página actual
+  location.reload();
 }

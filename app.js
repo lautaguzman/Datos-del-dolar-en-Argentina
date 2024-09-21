@@ -1,6 +1,24 @@
 // CONTENEDOR DE LOS VALORES Y CALCULOS DEL DOLAR
 const containerValues = document.querySelector("#containerValues");
 
+fetch("https://dolarapi.com/v1/dolares/oficial")
+  .then((response) => response.json()) //Convertir la respuesta a JSON
+
+  .then((oficial) => {
+    const oficialValue = document.createElement("ul");
+    oficialValue.innerHTML = `
+    <li> dolar ${oficial.nombre}</li> 
+    <li>compra ${oficial.compra}</li>
+     <li>venta ${oficial.venta}</li>
+    `;
+
+    containerValues.append(oficialValue);
+
+    console.log(oficial);
+  }) // Mostrar los datos
+
+  .catch((error) => console.error("Error:", error)); //Manejar errores
+
 // CONTENEDOR DE LA INFORMACION DEL DOLAR
 const dolarInfo = document.querySelector("#dolarInfo");
 
