@@ -2,7 +2,40 @@ const dolarCCL = document.querySelector("#dolarCCL");
 dolarCCL.addEventListener("click", mostrarDolarCCL);
 
 function mostrarDolarCCL() {
+  titleContainer.innerHTML = "";
+  containerValues.innerHTML = "";
   dolarInfo.innerHTML = "";
+
+  // FETCH CON LLAMADA A LA API PARA OBTENER INFORMACION SOBRE EL DOLAR (BLUE)
+  fetch("https://dolarapi.com/v1/dolares/contadoconliqui")
+    .then((response) => response.json()) //Convertir la respuesta a JSON
+
+    .then((CCLData) => {
+      // TITULO DOLAR
+      const title = document.createElement("h4");
+      title.innerText = `dolar ${CCLData.nombre}`;
+      titleContainer.append(title);
+
+      // CARD DE INFORMACION DEL DOLAR
+      const dolarCard = document.createElement("div");
+      dolarCard.className = "card-dolar";
+      containerValues.append(dolarCard);
+
+      const dolarCompra = document.createElement("div");
+      dolarCompra.className = "dolar-compra";
+      dolarCompra.innerHTML = ` 
+       <p>compra</p>
+       <span>${CCLData.compra}</span>`;
+
+      const dolarVenta = document.createElement("div");
+      dolarVenta.className = "dolar-venta";
+      dolarVenta.innerHTML = ` 
+       <p>venta</p>
+       <span>${CCLData.venta}</span>`;
+      dolarCard.append(dolarCompra, dolarVenta);
+    }) // Mostrar los datos
+
+    .catch((error) => console.error("Error:", error)); //Manejar errores
 
   const dolarCCLDescription = document.createElement("p");
 

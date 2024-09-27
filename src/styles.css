@@ -33,33 +33,140 @@ header {
 /* MAIN */
 main {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   border: solid 2px blue;
   width: 100%;
   height: 70vh;
 }
-
-.container-values {
-  border: solid 4px rgb(255, 132, 0);
-  width: 40%;
-  height: 80%;
+/* TITULO CONTAINER */
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
 }
+.title-container h4 {
+  color: rgb(0, 99, 92);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+/* CONTENEDOR DE VALORES */
+.container-values {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(0, 99, 92);
+  width: 45%;
+  height: 85%;
+}
+.card-dolar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 40%;
+  border: 5px solid white;
+}
+.dolar-compra {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(239, 239, 239);
+  border-radius: 20px;
+  width: 80%;
+  height: 40%;
+}
+.dolar-compra p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 99, 92);
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 30%;
+  height: 90%;
+}
+.dolar-compra span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 99, 92);
+  color: rgb(239, 239, 239);
+  border-radius: 10px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  width: 25%;
+  height: 90%;
+}
+.dolar-venta {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(239, 239, 239);
+  border-radius: 20px;
+  width: 80%;
+  height: 40%;
+}
+.dolar-venta p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 99, 92);
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 30%;
+  height: 90%;
+}
+.dolar-venta span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 99, 92);
+  color: rgb(239, 239, 239);
+  border-radius: 10px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  width: 25%;
+  height: 90%;
+}
+
+.calculadora-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(239, 239, 239);
+  width: 90%;
+  height: 40%;
+}
+
+.calculadora-container span {
+  width: 20%;
+  height: 20px;
+  border: solid 2px red;
+}
+/* CONTENEDOR DE INFO DOLAR */
 .dolar-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 4px black;
-  width: 40%;
-  height: 80%;
-  position: relative;
+  background-color: rgb(0, 99, 92);
+  width: 45%;
+  height: 85%;
 }
 .dolar-info p {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: black;
+  color: rgb(239, 239, 239);
   text-transform: uppercase;
   font-size: 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

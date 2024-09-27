@@ -1,20 +1,61 @@
+// CONTENEDOR PARA EL TITULO
+const titleContainer = document.querySelector("#titleContainer");
+
 // CONTENEDOR DE LOS VALORES Y CALCULOS DEL DOLAR
 const containerValues = document.querySelector("#containerValues");
 
+// FETCH CON LLAMADA A LA API PARA OBTENER INFORMACION SOBRE EL DOLAR (OFICIAL)
 fetch("https://dolarapi.com/v1/dolares/oficial")
   .then((response) => response.json()) //Convertir la respuesta a JSON
+  .then((oficialData) => {
+    // TITULO DOLAR
+    const title = document.createElement("h4");
+    title.innerText = `dolar ${oficialData.nombre}`;
+    titleContainer.append(title);
 
-  .then((oficial) => {
-    const oficialValue = document.createElement("ul");
-    oficialValue.innerHTML = `
-    <li> dolar ${oficial.nombre}</li> 
-    <li>compra ${oficial.compra}</li>
-     <li>venta ${oficial.venta}</li>
-    `;
+    // CARD DE INFORMACION DEL DOLAR
+    const dolarCard = document.createElement("div");
+    dolarCard.className = "card-dolar";
+    containerValues.append(dolarCard);
 
-    containerValues.append(oficialValue);
+    const dolarCompra = document.createElement("div");
+    dolarCompra.className = "dolar-compra";
+    dolarCompra.innerHTML = ` 
+    <p>compra</p>
+    <span>${oficialData.compra}</span>`;
 
-    console.log(oficial);
+    const dolarVenta = document.createElement("div");
+    dolarVenta.className = "dolar-venta";
+    dolarVenta.innerHTML = ` 
+    <p>venta</p>
+    <span>${oficialData.venta}</span>`;
+    dolarCard.append(dolarCompra, dolarVenta);
+
+    const calculadoraContainer = document.createElement("div");
+    calculadoraContainer.className = "calculadora-container";
+
+    containerValues.append(calculadoraContainer);
+
+    const titleCalculadora = document.createElement("p");
+    titleCalculadora.innerText = "calculadora de cambio ars a usd";
+    calculadoraContainer.append(titleCalculadora);
+
+    const cantidadEnPesos = document.createElement("input");
+    cantidadEnPesos.placeholder = "ingresa tus ars";
+    cantidadEnPesos.type = "number";
+    calculadoraContainer.append(cantidadEnPesos);
+
+    const buttonCalcular = document.createElement("button");
+    buttonCalcular.innerText = "calcular";
+    buttonCalcular.addEventListener("click", () => {
+      let resultadoFinal = cantidadEnPesos.value / oficialData.venta;
+      resultado.innerText = `$${resultadoFinal.toFixed(2)}`;
+      console.log(resultadoFinal);
+    });
+    calculadoraContainer.append(buttonCalcular);
+
+    const resultado = document.createElement("span");
+    calculadoraContainer.append(resultado);
   }) // Mostrar los datos
 
   .catch((error) => console.error("Error:", error)); //Manejar errores
