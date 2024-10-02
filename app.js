@@ -1,47 +1,62 @@
-// CONTENEDOR PARA EL TITULO
-const titleContainer = document.querySelector("#titleContainer");
-
-// CONTENEDOR DE LOS VALORES Y CALCULOS DEL DOLAR
-const containerValues = document.querySelector("#containerValues");
+// MAIN
+const main = document.querySelector("#main");
 
 // FETCH CON LLAMADA A LA API PARA OBTENER INFORMACION SOBRE EL DOLAR (OFICIAL)
 fetch("https://dolarapi.com/v1/dolares/oficial")
   .then((response) => response.json()) //Convertir la respuesta a JSON
   .then((oficialData) => {
-    // TITULO DOLAR
+    // CONTENEDOR DE TITULO
+    const titleContainer = document.createElement("div");
+    titleContainer.className = "title-container";
+    main.append(titleContainer);
+
     const title = document.createElement("h4");
     title.innerText = `dolar ${oficialData.nombre}`;
     titleContainer.append(title);
+
+    // CONTENEDOR DE LOS VALORES Y CALCULOS DEL DOLAR
+    const containerValues = document.createElement("div");
+    containerValues.className = "container-values";
+    main.append(containerValues);
 
     // CARD DE INFORMACION DEL DOLAR
     const dolarCard = document.createElement("div");
     dolarCard.className = "card-dolar";
     containerValues.append(dolarCard);
 
-    const dolarCompra = document.createElement("div");
+    const dolarCompra = document.createElement("section");
     dolarCompra.className = "dolar-compra";
     dolarCompra.innerHTML = ` 
     <p>compra</p>
     <span>${oficialData.compra}</span>`;
 
-    const dolarVenta = document.createElement("div");
+    const dolarVenta = document.createElement("section");
     dolarVenta.className = "dolar-venta";
     dolarVenta.innerHTML = ` 
     <p>venta</p>
     <span>${oficialData.venta}</span>`;
     dolarCard.append(dolarCompra, dolarVenta);
 
+    // BOTON PARA MOSTRA INFORMACION DEL DOLAR
+    const buttonInfo = document.createElement("button");
+    buttonInfo.innerHTML = `<i class="fa-solid fa-info" style="color: #00635c;"></i>`;
+    containerValues.append(buttonInfo);
+    buttonInfo.addEventListener("click", () => {
+      alert(`diste click`);
+    });
+
+    // CALCULADORA
     const calculadoraContainer = document.createElement("div");
     calculadoraContainer.className = "calculadora-container";
 
-    containerValues.append(calculadoraContainer);
+    main.append(calculadoraContainer);
 
     const titleCalculadora = document.createElement("p");
-    titleCalculadora.innerText = "calculadora de cambio ars a usd";
+    titleCalculadora.innerText = "calculadora de cambio";
     calculadoraContainer.append(titleCalculadora);
 
     const cantidadEnPesos = document.createElement("input");
-    cantidadEnPesos.placeholder = "ingresa tus ars";
+    cantidadEnPesos.placeholder = "ars";
     cantidadEnPesos.type = "number";
     calculadoraContainer.append(cantidadEnPesos);
 
@@ -55,6 +70,7 @@ fetch("https://dolarapi.com/v1/dolares/oficial")
     calculadoraContainer.append(buttonCalcular);
 
     const resultado = document.createElement("span");
+    resultado.innerText = "usd";
     calculadoraContainer.append(resultado);
   }) // Mostrar los datos
 
