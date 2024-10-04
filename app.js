@@ -32,7 +32,7 @@ fetch("https://dolarapi.com/v1/dolares/oficial")
 
     const dolarVenta = document.createElement("section");
     dolarVenta.className = "dolar-venta";
-    dolarVenta.innerHTML = ` 
+    dolarVenta.innerHTML = `
     <p>venta</p>
     <span>${oficialData.venta}</span>`;
     dolarCard.append(dolarCompra, dolarVenta);
