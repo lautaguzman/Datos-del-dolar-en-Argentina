@@ -14,7 +14,7 @@ fetch("https://dolarapi.com/v1/dolares/oficial")
     title.innerText = `dolar ${oficialData.nombre}`;
     titleContainer.append(title);
 
-    // CONTENEDOR DE LOS VALORES Y CALCULOS DEL DOLAR
+    // CONTENEDOR DE LOS VALORES DEL DOLAR
     const containerValues = document.createElement("div");
     containerValues.className = "container-values";
     main.append(containerValues);
@@ -39,10 +39,10 @@ fetch("https://dolarapi.com/v1/dolares/oficial")
 
     // BOTON PARA MOSTRA INFORMACION DEL DOLAR
     const buttonInfo = document.createElement("button");
-    buttonInfo.innerHTML = `<i class="fa-solid fa-info" style="color: #00635c;"></i>`;
+    buttonInfo.innerHTML = `info`;
     containerValues.append(buttonInfo);
     buttonInfo.addEventListener("click", () => {
-      alert(`diste click`);
+      alert(`informacion sobre el dolar`);
     });
 
     // CALCULADORA
