@@ -1,48 +1,26 @@
-// CAPTURO BOTON DE DOLAR BLUE
+// BOTÓN DE DÓLAR BLUE
 const dolarBlue = document.querySelector("#dolarBlue");
 dolarBlue.addEventListener("click", mostrarDolarBlue);
 
 function mostrarDolarBlue() {
-  titleContainer.innerHTML = "";
-  containerValues.innerHTML = "";
-  dolarInfo.innerHTML = "";
-
-  // FETCH CON LLAMADA A LA API PARA OBTENER INFORMACION SOBRE EL DOLAR (BLUE)
   fetch("https://dolarapi.com/v1/dolares/blue")
-    .then((response) => response.json()) //Convertir la respuesta a JSON
-
+    .then((response) => response.json())
     .then((blueData) => {
-      // TITULO DOLAR
-      const title = document.createElement("h4");
-      title.innerText = `dolar ${blueData.nombre}`;
-      titleContainer.append(title);
+      navItems.style.display = "none";
+      title.innerText = ``;
+      valorCompra.innerText = ``;
+      valorVenta.innerText = ``;
 
-      // CARD DE INFORMACION DEL DOLAR
-      const dolarCard = document.createElement("div");
-      dolarCard.className = "card-dolar";
-      containerValues.append(dolarCard);
+      title.innerText = `dolar blue`;
 
-      const dolarCompra = document.createElement("div");
-      dolarCompra.className = "dolar-compra";
-      dolarCompra.innerHTML = ` 
-       <p>compra</p>
-       <span>${blueData.compra}</span>`;
+      valorCompra.innerHTML = `${blueData.compra}`;
 
-      const dolarVenta = document.createElement("div");
-      dolarVenta.className = "dolar-venta";
-      dolarVenta.innerHTML = ` 
-       <p>venta</p>
-       <span>${blueData.venta}</span>`;
-      dolarCard.append(dolarCompra, dolarVenta);
-    }) // Mostrar los datos
+      valorVenta.innerHTML = `${blueData.venta}`;
+    });
+}
 
-    .catch((error) => console.error("Error:", error)); //Manejar errores
-
-  const dolarBlueDescription = document.createElement("p");
-  dolarBlueDescription.innerText = `
-El dólar blue en Argentina es el dólar estadounidense en el mercado paralelo, fuera del sistema bancario oficial. 
-Su valor se determina por oferta y demanda en un mercado no regulado, y suele ser más alto que el dólar oficial debido a las restricciones al acceso a divisas extranjeras impuestas por el gobierno. 
-Aunque es ilegal, el dólar blue se utiliza ampliamente en tiempos de crisis económica o cuando hay restricciones cambiarias. 
-Su precio refleja la percepción del mercado sobre la economía y la estabilidad del país.`;
-  dolarInfo.append(dolarBlueDescription);
+function descipcionBlue(dolarDescripcion) {
+  dolarDescripcion.innerText = "";
+  dolarDescripcion.innerText = `   
+  El dólar blue en Argentina es el dólar estadounidense en el mercado paralelo, fuera del sistema bancario oficial.Su valor se determina por oferta y demanda en un mercado no regulado, y suele ser más alto que el dólar oficial debido a las restricciones al acceso a divisas extranjeras impuestas por el gobierno     Aunque es ilegal, el dólar blue se utiliza ampliamente en tiempos de crisis económica o cuando hay restricciones cambiarias. Su precio refleja la percepción del mercado sobre la economía y la estabilidad del país.`;
 }
