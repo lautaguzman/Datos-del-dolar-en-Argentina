@@ -44,30 +44,3 @@ fetch("https://dolarapi.com/v1/dolares/oficial")
     valorVenta.innerText = `${oficialData.venta}`;
   }) // Mostrar los datos
   .catch((error) => console.error("Error:", error)); //Manejar errores
-
-// CALCULADORA
-const calculadoraContainer = document.createElement("div");
-calculadoraContainer.className = "calculadora-container";
-main.append(calculadoraContainer);
-
-const titleCalculadora = document.createElement("p");
-titleCalculadora.innerText = "calculadora de cambio";
-calculadoraContainer.append(titleCalculadora);
-
-const cantidadEnPesos = document.createElement("input");
-cantidadEnPesos.placeholder = "ars";
-cantidadEnPesos.type = "number";
-calculadoraContainer.append(cantidadEnPesos);
-
-const buttonCalcular = document.createElement("button");
-buttonCalcular.innerText = "calcular";
-buttonCalcular.addEventListener("click", () => {
-  let resultadoFinal = cantidadEnPesos.value / oficialData.venta;
-  resultado.innerText = `$${resultadoFinal.toFixed(2)}`;
-  console.log(resultadoFinal);
-});
-calculadoraContainer.append(buttonCalcular);
-
-const resultado = document.createElement("span");
-resultado.innerText = "usd";
-calculadoraContainer.append(resultado);
