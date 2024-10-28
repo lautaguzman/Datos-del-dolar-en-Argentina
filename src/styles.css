@@ -321,7 +321,6 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(239, 239, 239);
     width: 90%;
     height: 50%;
   }
@@ -329,10 +328,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(239, 239, 239);
+    border-radius: 5px;
     list-style-type: none;
-    border: solid 2px rgb(0, 99, 92);
     width: 10%;
-    height: 80%;
+    height: 70%;
   }
 }
 
