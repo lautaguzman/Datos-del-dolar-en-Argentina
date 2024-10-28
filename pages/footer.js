@@ -16,8 +16,17 @@ const iconosRedes = [
   `<i class="fa-brands fa-square-instagram fa-xl" style="color: #e1306c;"></i>`,
 ];
 
-iconosRedes.forEach((iconos) => {
+const direccionesRedes = [
+  () => alert("Informacion de la pagina"),
+  () => window.open(`https://github.com/lautaguzman`),
+  () => window.open(`https://www.linkedin.com/in/lautaro-guzman-8841431b8/`),
+  () =>
+    window.open("https://instagram.com/lautaguzman21?igshid=NzZlODBkYWE4Ng=="),
+];
+
+iconosRedes.forEach((iconos, index) => {
   const redes = document.createElement("li");
   redes.innerHTML = iconos;
+  redes.addEventListener("click", direccionesRedes[index]);
   redesContainer.append(redes);
 });
