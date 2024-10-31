@@ -1,10 +1,11 @@
 // BOTON PARA MOSTRAR INFORMACION DEL DOLAR
-const buttonInfo = document.createElement("button");
-buttonInfo.innerHTML = `info`;
-containerValues.append(buttonInfo);
-buttonInfo.addEventListener("click", dolarInfo);
+const buttonInfoDolar = document.createElement("button");
+buttonInfoDolar.innerHTML = `info`;
+containerValues.append(buttonInfoDolar);
+buttonInfoDolar.addEventListener("click", infoDolar);
 
-function dolarInfo() {
+// FUNCION QUE MUESTRA LOS DATOS DE LA INFORMACION DE DOLAR
+function infoDolar() {
   // CONTENEDOR DE LA INFORMACION DEL DOLAR
   const infoContainer = document.createElement("section");
   infoContainer.className = "info-container";
@@ -19,8 +20,8 @@ function dolarInfo() {
   });
   infoContainer.append(closeInfo);
 
-  const dolarDescripcion = document.createElement("p");
-  dolarDescripcion.innerText = ` 
-  el dólar oficial en argentina es la tasa de cambio establecida y controlada por el banco central de la república argentina (bcra). esta tasa es utilizada en transacciones formales, como importaciones y exportaciones, y suele diferir del valor en el mercado paralelo. además, el dólar oficial es la referencia para impuestos y regulaciones en compras de divisas y pagos internacionales realizados a través de bancos y entidades financieras reguladas en el país.`;
-  infoContainer.append(dolarDescripcion);
+  const descripcionDolar = document.createElement("p");
+  descripcionDolar.innerText = `el dólar oficial en argentina es la tasa de cambio establecida y controlada por el banco central de la república argentina (bcra). esta tasa es utilizada en transacciones formales, como importaciones y exportaciones, y suele diferir del valor en el mercado paralelo. Además, el dólar oficial es la referencia para impuestos y regulaciones en compras de divisas y pagos internacionales realizados a través de bancos y entidades financieras reguladas en el país.`;
+
+  infoContainer.append(descripcionDolar);
 }
