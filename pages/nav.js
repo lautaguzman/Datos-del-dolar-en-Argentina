@@ -1,5 +1,5 @@
-const inicio = document.querySelector("#inicio");
-inicio.addEventListener("click", reloadPage);
+const navHome = document.querySelector("#navHome");
+navHome.addEventListener("click", reloadPage);
 
 const openItems = document.querySelector("#openItems");
 
