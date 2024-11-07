@@ -1,0 +1,37 @@
+[
+  {
+    "id": "blue",
+    "nombre": "dólar blue",
+    "informacion": "el dólar blue en argentina es el tipo de cambio no oficial o paralelo, obtenido en el mercado informal. este valor surge de la oferta y demanda fuera de las regulaciones del banco central y suele ser más alto que el dólar oficial. es comúnmente usado en transacciones que buscan evitar los límites y restricciones de compra de divisas establecidos por el gobierno."
+  },
+
+  {
+    "id": "mep",
+    "nombre": "dólar bolsa",
+    "informacion": "el dólar mep (o dólar bolsa) en argentina es un tipo de cambio obtenido mediante la compra y venta de bonos en el mercado local. para acceder a esta cotización, se compran bonos en pesos y luego se venden en dólares, obteniendo divisas sin las restricciones del mercado oficial. Esta operación es legal y regulada, y su cotización suele ser intermedia entre el dólar oficial y el dólar blue."
+  },
+
+  {
+    "id": "ccl",
+    "nombre": "dólar ccl",
+    "informacion": "el dólar contado con liquidación (ccl) en argentina es un tipo de cambio que permite obtener dólares en el exterior mediante la compra de activos financieros (como bonos o acciones) en pesos y su venta en mercados extranjeros en dólares. esta operación es legal y regulada y es utilizada tanto por empresas como por particulares para transferir capitales fuera del país. su cotización suele ser similar a la del dólar mep, aunque suele estar influenciada por la demanda de divisas para inversión o resguardo fuera de argentina."
+  },
+
+  {
+    "id": "turista",
+    "nombre": "dólar tarjeta",
+    "informacion": "el dólar tarjeta en argentina es el tipo de cambio aplicado a las compras en moneda extranjera realizadas con tarjetas de crédito o débito, generalmente en viajes o compras online en el exterior. Su valor se calcula sumando al dólar oficial un recargo del 30% por el impuesto pais y un 45% a cuenta de los impuestos a las ganancias y bienes personales. este recargo convierte al dólar tarjeta en una cotización intermedia entre el dólar oficial y el dólar blue"
+  },
+
+  {
+    "id": "mayorista",
+    "nombre": "dólar mayorista",
+    "informacion": "el dólar mayorista en argentina es la tasa de cambio que aplica el banco central para operaciones entre bancos, grandes empresas y entidades financieras. su valor suele ser ligeramente menor al dólar oficial minorista, ya que es utilizado en operaciones de mayor volumen y regulado directamente por el banco central. este tipo de cambio influye en el comercio exterior y la importación de bienes, y su cotización es ajustada periódicamente por el Banco Central para mantener la política cambiaria del país."
+  },
+
+  {
+    "id": "crypto",
+    "nombre": "dólar crypto",
+    "informacion": "el dólar cripto en argentina es la cotización del dólar obtenida a través de la compra de stablecoins, como usdt (tether) o usdc, en plataformas de criptomonedas. estas stablecoins están vinculadas al dólar estadounidense, y su precio en pesos refleja la demanda de dólares digitales en el mercado. el dólar cripto suele tener un valor cercano al dólar blue, ya que permite acceder a divisas de forma rápida y sin las restricciones del mercado oficial, siendo una opción popular para resguardar valor o transferir dinero."
+  }
+]
