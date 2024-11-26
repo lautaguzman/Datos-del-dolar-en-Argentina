@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(245, 245, 245);
   width: 100%;
   height: 100vh;
 }
@@ -26,7 +26,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 99, 92);
+  background-color: rgb(27, 38, 49);
   width: 100%;
   height: 10vh;
 }
@@ -39,6 +39,7 @@ main {
   align-items: center;
   width: 100%;
   height: 70vh;
+  border: solid 2px red;
 }
 
 /* FOOTER */
@@ -47,7 +48,7 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(0, 99, 92);
+  background-color: #1b2631;
   width: 100%;
   height: 15vh;
 }
@@ -55,7 +56,7 @@ footer {
 /* MEDIA QUERY PARA DISPOSITIVO MOVIL */
 @media (min-width: 320px) and (max-width: 576px) {
   /* NAV */
-  .nav {
+  .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,8 +85,8 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(0, 99, 92, 0.9);
-    border: solid 3px rgb(239, 239, 239);
+    background-color: rgb(27, 38, 49, 0.9);
+    border: solid 3px rgb(245, 245, 245);
     position: absolute;
     z-index: 10;
     top: 0;
@@ -103,8 +104,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(239, 239, 239);
-    color: #005b4a;
+    background-color: rgb(245, 245, 245);
+    color: rgb(27, 38, 49);
     border-radius: 15px;
     font-size: 0.7rem;
     font-weight: 600;
@@ -120,13 +121,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 2px rgb(0, 99, 92);
+    border: solid 2px rgb(27, 38, 49);
     border-radius: 10px;
     width: 90%;
     height: 10%;
   }
-  .title-container h4 {
-    color: rgb(0, 99, 92);
+  .title-container p {
+    color: rgb(27, 38, 49);
     text-transform: uppercase;
     font-size: 1.8rem;
     font-family: "Rokkitt", serif;
@@ -137,9 +138,16 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgb(0, 99, 92);
-    width: 100%;
-    height: 40%;
+    border: solid 3px blue;
+    width: 95%;
+    height: 85%;
+    overflow: auto;
+  }
+  /* CARD DE MONEDA*/
+  .card-money {
+    border: solid 2px green;
+    width: 90%;
+    height: 150px;
   }
   .card-dolar {
     display: flex;

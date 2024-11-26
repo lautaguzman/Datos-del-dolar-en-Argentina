@@ -1,46 +1,65 @@
 // MAIN
 const main = document.querySelector("#main");
 
-// CONTENEDOR DE TITULO
 const titleContainer = document.createElement("div");
-titleContainer.className = "title-container";
+titleContainer.className = `title-container`;
 main.append(titleContainer);
 
-const title = document.createElement("h4");
-title.innerText = `dolar oficial`;
-titleContainer.append(title);
+const titleMain = document.createElement("p");
+titleMain.innerText = ``;
+titleContainer.append(titleMain);
 
-// CONTENEDOR DE LOS VALORES DEL DOLAR
 const containerValues = document.createElement("div");
-containerValues.className = "container-values";
+containerValues.className = `container-values`;
 main.append(containerValues);
 
-// CARD DE INFORMACION DEL DOLAR
-const dolarCard = document.createElement("div");
-dolarCard.className = "card-dolar";
-containerValues.append(dolarCard);
+// FUNCION PARA MODIFICAR CONTENIDO DEL TITULO MAIN
+function updateTitle(newTitle) {
+  titleMain.innerText = newTitle;
+}
 
-const dolarCompra = document.createElement("section");
-dolarCompra.className = "dolar-compra";
-dolarCompra.innerHTML = `<p>compra</p>`;
+function updateCard(titleCard, purchase, sale) {
+  const card = document.createElement("div");
+  card.className = "card-money";
 
-const valorCompra = document.createElement("span");
-dolarCompra.append(valorCompra);
+  const cardTitle = document.createElement("h4");
+  cardTitle.innerText = titleCard; // Actualiza el título de la tarjeta
+  card.append(cardTitle);
 
-const dolarVenta = document.createElement("section");
-dolarVenta.className = "dolar-venta";
-dolarVenta.innerHTML = `<p>venta</p>`;
+  const purchaseContainer = document.createElement("section");
+  purchaseContainer.className = "purchase-container";
+  purchaseContainer.innerHTML = `<p>Compra</p>`;
 
-const valorVenta = document.createElement("span");
-dolarVenta.append(valorVenta);
+  const purchaseValue = document.createElement("span");
+  purchaseValue.innerText = purchase; // Actualiza el valor de compra
+  purchaseContainer.append(purchaseValue);
 
-dolarCard.append(dolarCompra, dolarVenta);
+  const saleContainer = document.createElement("section");
+  saleContainer.className = "venta-container";
+  saleContainer.innerHTML = `<p>Venta</p>`;
 
-// FETCH CON LLAMADA A LA API PARA OBTENER INFORMACION SOBRE EL DOLAR (OFICIAL)
-fetch("https://dolarapi.com/v1/dolares/oficial")
-  .then((response) => response.json()) //Convertir la respuesta a JSON
-  .then((oficialData) => {
-    valorCompra.innerText = `${oficialData.compra}`;
-    valorVenta.innerText = `${oficialData.venta}`;
-  }) // Mostrar los datos
-  .catch((error) => console.error("Error:", error)); //Manejar errores
+  const saleValue = document.createElement("span");
+  saleValue.innerText = sale; // Actualiza el valor de venta
+  saleContainer.append(saleValue);
+
+  card.append(purchaseContainer, saleContainer);
+
+  containerValues.append(card);
+}
+
+function dolares() {
+  updateTitle("dolares");
+
+  fetch("https://dolarapi.com/v1/dolares")
+    .then((response) => response.json()) // Convierte la respuesta a JSON
+    .then((dataDolar) => {
+      dataDolar.forEach((dolar) => {
+        updateCard(dolar.nombre, dolar.compra, dolar.venta);
+      });
+    })
+    .catch((error) => {
+      console.error("Error al obtener los datos del API:", error);
+    });
+}
+
+dolares();

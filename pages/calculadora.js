@@ -1,7 +1,7 @@
 // CALCULADORA
 const calculadoraContainer = document.createElement("div");
 calculadoraContainer.className = "calculadora-container";
-main.append(calculadoraContainer);
+// main.append(calculadoraContainer);
 
 const titleCalculadora = document.createElement("p");
 titleCalculadora.innerText = "calculadora de cambio";
