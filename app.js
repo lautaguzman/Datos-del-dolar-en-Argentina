@@ -46,7 +46,7 @@ function updateCard(titleCard, purchase, sale) {
 }
 
 function dolares() {
-  updateTitle("dolares");
+  updateTitle("dólar");
 
   containerValues.innerHTML = "";
 
