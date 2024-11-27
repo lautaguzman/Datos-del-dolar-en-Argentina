@@ -27,7 +27,6 @@ function updateCard(titleCard, purchase, sale) {
   card.append(cardTitle);
 
   const purchaseContainer = document.createElement("section");
-  purchaseContainer.className = "purchase-container";
   purchaseContainer.innerHTML = `<p>Compra</p>`;
 
   const purchaseValue = document.createElement("span");
@@ -35,7 +34,6 @@ function updateCard(titleCard, purchase, sale) {
   purchaseContainer.append(purchaseValue);
 
   const saleContainer = document.createElement("section");
-  saleContainer.className = "venta-container";
   saleContainer.innerHTML = `<p>Venta</p>`;
 
   const saleValue = document.createElement("span");
@@ -49,6 +47,8 @@ function updateCard(titleCard, purchase, sale) {
 
 function dolares() {
   updateTitle("dolares");
+
+  containerValues.innerHTML = "";
 
   fetch("https://dolarapi.com/v1/dolares")
     .then((response) => response.json()) // Convierte la respuesta a JSON
