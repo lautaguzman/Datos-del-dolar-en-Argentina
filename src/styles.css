@@ -105,14 +105,15 @@ footer {
     align-items: center;
     background-color: rgb(245, 245, 245);
     color: rgb(27, 38, 49);
-    border-radius: 15px;
-    font-size: 0.7rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
     font-weight: 600;
     font-family: "Rokkitt", serif;
+    letter-spacing: 1px;
     text-transform: uppercase;
     list-style-type: none;
-    width: 60%;
-    height: 40px;
+    width: 50%;
+    height: 30px;
   }
   /* MAIN */
   /* TITULO CONTAINER */

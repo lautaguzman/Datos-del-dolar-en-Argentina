@@ -29,11 +29,13 @@ navItems.append(closeItems);
 
 // ARRAY DE NOMBRES ITEMS DE NAV
 const namesItems = [
-  `dólares`,
-  `cotizaciones`,
-  `real brasileño`,
-  `peso chileno`,
-  `peso uruguayo`,
+  `dólar oficial`,
+  `dólar blue`,
+  `dólar bolsa`,
+  `dólar ccl`,
+  `dólar mayorista`,
+  `dólar crypto`,
+  `dólar tarjeta`,
   `calculadora`,
 ];
 
