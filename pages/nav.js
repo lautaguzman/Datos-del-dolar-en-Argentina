@@ -30,7 +30,7 @@ navItems.append(closeItems);
 // ARRAY DE NOMBRES ITEMS DE NAV
 const namesItems = [
   `dólares`,
-  `euro`,
+  `cotizaciones`,
   `real brasileño`,
   `peso chileno`,
   `peso uruguayo`,
@@ -40,7 +40,7 @@ const namesItems = [
 // ARRAY QUE ALMACENA LAS FUNCIONES DE LOS ITEMS DE NAV
 const functionsNavItems = [
   () => dolares(),
-  () => euros(),
+  () => cotizacionCasas(),
   () => realBrasil(),
   () => pesoChileno(),
   () => pesoUruguayo(),
