@@ -41,9 +41,9 @@ const namesItems = [
 
 // ARRAY QUE ALMACENA LAS FUNCIONES DE LOS ITEMS DE NAV
 const functionsNavItems = [
-  () => dolares(),
-  () => cotizacionCasas(),
-  () => realBrasil(),
+  () => dolarOficial(),
+  () => dolarBlue(),
+  () => dolarBolsa(),
   () => pesoChileno(),
   () => pesoUruguayo(),
 ];
