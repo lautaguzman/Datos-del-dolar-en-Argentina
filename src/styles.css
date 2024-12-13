@@ -35,7 +35,9 @@ header {
 main {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  overflow: auto;
   width: 100%;
   height: 70vh;
 }
@@ -115,6 +117,10 @@ footer {
     height: 30px;
   }
   /* MAIN */
+
+  main {
+    border: solid 3px red;
+  }
   /* CARD DE MONEDA*/
   .card-money {
     display: flex;
@@ -126,26 +132,27 @@ footer {
     font-family: "Rokkitt", serif;
     text-transform: uppercase;
     width: 90%;
-    height: 90%;
+    height: 180px;
+    margin: 10px;
   }
   .card-money h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(245, 245, 245);
-    color: rgb(27, 38, 49);
-    border-radius: 5px;
-    width: 80%;
-    height: 15%;
+    color: rgb(245, 245, 245);
+    width: 100%;
+    height: 35px;
+    border: solid 2px red;
   }
   .card-money section {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: rgb(245, 245, 245);
-    border: solid 2px rgb(245, 245, 245);
+    background-color: rgb(245, 245, 245);
+    color: rgb(27, 38, 49);
+    border-radius: 5px;
     width: 90%;
-    height: 20%;
+    height: 40px;
   }
   .card-money section p {
     display: flex;
@@ -158,20 +165,21 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(245, 245, 245);
-    color: rgb(27, 38, 49);
+    background-color: rgb(27, 38, 49);
+    color: rgb(245, 245, 245);
     border-radius: 10px;
     letter-spacing: 1px;
     font-weight: 600;
     width: 30%;
-    height: 60%;
+    height: 70%;
   }
 
   .card-money button {
-    background-color: rgb(245, 245, 245);
-    color: rgb(27, 38, 49);
-    width: 60%;
-    height: 10%;
+    background-color: transparent;
+    color: rgb(245, 245, 245);
+    border: solid 2px rgb(245, 245, 245);
+    width: 40%;
+    height: 30px;
   }
   /* CONTENEDOR DE INFO DOLAR */
   .info-container {

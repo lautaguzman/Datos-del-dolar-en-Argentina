@@ -1,7 +1,7 @@
 // MAIN
 const main = document.querySelector("#main");
 
-// FUNCION DONDE CREO LA CARD PARA MOSTRAR LA INFORMACION DEL DOLAR
+// FUNCION DONDE CREO CARD PARA MOSTRAR LA INFORMACION DEL DOLAR
 function updateCard(title, purchase, sale) {
   const card = document.createElement("div");
   card.className = "card-money";
@@ -24,14 +24,14 @@ function updateCard(title, purchase, sale) {
   saleContainer.append(saleValue);
 
   const infoCard = document.createElement("button");
-  infoCard.innerText = `info`;
+  infoCard.innerText = `informacion`;
 
   card.append(cardTitle, purchaseContainer, saleContainer, infoCard);
 
   main.append(card);
 }
 
-// Función para consumir la API y devolver la promesa
+// Función para consumir api de dolares
 function apiDolares() {
   return fetch("https://dolarapi.com/v1/dolares")
     .then((response) => response.json()) // Devuelves la promesa para que pueda ser usada en .then
@@ -39,24 +39,51 @@ function apiDolares() {
       console.error("Error al obtener los datos de la API:", error);
     });
 }
-// FUNCION PARA MOSTRAR DATOS DE DOLAR OFICIAL
-function dolarOficial() {
-  main.innerHTML = ``;
 
-  apiDolares().then((data) => {
-    // Buscar el "Dólar Oficial"
-    const oficialData = data.find((dolar) => dolar.nombre === "Oficial");
-
-    // Verificar si encontramos el dólar oficial
-    if (oficialData) {
-      updateCard(
-        `dólar ${oficialData.nombre}`,
-        oficialData.compra,
-        oficialData.venta
-      );
+// Funcion para mostrar los datos de cada tipo de dolar
+function dolares() {
+  apiDolares().then((dataDolar) => {
+    if (dataDolar) {
+      // Validación en caso de que los datos sean null o undefined
+      dataDolar.forEach((dolar) => {
+        updateCard(`Dólar ${dolar.nombre}`, dolar.compra, dolar.venta);
+      });
     } else {
-      console.log("No se encontró información del Dólar Oficial.");
+      console.error("No se pudieron cargar los datos del dólar.");
     }
   });
 }
-dolarOficial();
+dolares();
+
+// // Función genérica para mostrar los datos de un tipo específico de dólar
+// function mostrarDolar(tipo) {
+//   main.innerHTML = ``;
+
+//   apiDolares().then((data) => {
+//     // Buscar el dólar especificado
+//     const dolarData = data.find((dolar) => dolar.nombre === tipo);
+
+//     // Verificar si encontramos el tipo de dólar solicitado
+//     if (dolarData) {
+//       updateCard(
+//         `dólar ${dolarData.nombre}`,
+//         dolarData.compra,
+//         dolarData.venta
+//       );
+//     } else {
+//       console.log(`No se encontró información del Dólar ${tipo}.`);
+//     }
+//   });
+// }
+
+// mostrarDolar("Oficial"); // Para mostrar el Dólar Oficial
+// mostrarDolar("Blue");
+
+// fetch("https://dolarapi.com/v1/dolares")
+//   .then((response) => response.json())
+//   .then((dataDolar) => {
+//
+//   })
+//   .catch((error) => {
+//     console.error("Error al obtener los datos del dólar:", error);
+//   });

@@ -41,11 +41,13 @@ const namesItems = [
 
 // ARRAY QUE ALMACENA LAS FUNCIONES DE LOS ITEMS DE NAV
 const functionsNavItems = [
-  () => dolarOficial(),
-  () => dolarBlue(),
-  () => dolarBolsa(),
-  () => pesoChileno(),
-  () => pesoUruguayo(),
+  () => mostrarDolar("Oficial"),
+  () => mostrarDolar("Blue"),
+  () => mostrarDolar("Bolsa"),
+  () => mostrarDolar("Contado con liquidación"),
+  () => mostrarDolar("Mayorista"),
+  () => mostrarDolar("Cripto"),
+  () => mostrarDolar("Tarjeta"),
 ];
 
 // RECORRO ARRAY DE NAMES LI, CREO ETIQUETAS LI , AGREGO NOMBRES Y FUNCIONES A CADA UNO.
