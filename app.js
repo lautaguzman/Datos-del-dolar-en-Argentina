@@ -4,7 +4,7 @@ const main = document.querySelector("#main");
 // FUNCION DONDE CREO CARD PARA MOSTRAR LA INFORMACION DEL DOLAR
 function updateCard(title, purchase, sale) {
   const card = document.createElement("div");
-  card.className = "card-money";
+  card.className = "card-dolar";
 
   const cardTitle = document.createElement("h4");
   cardTitle.innerText = title;
@@ -55,7 +55,7 @@ function dolares() {
 }
 dolares();
 
-// // Función genérica para mostrar los datos de un tipo específico de dólar
+// Función genérica para mostrar los datos de un tipo específico de dólar
 // function mostrarDolar(tipo) {
 //   main.innerHTML = ``;
 
