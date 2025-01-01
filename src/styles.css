@@ -180,15 +180,18 @@ font-family: "Rokkitt", serif;
     width: 30%;
     height: 70%;
   }
-
   .card-dolar button {
     background-color: transparent;
     color: rgb(245, 245, 245);
     border: solid 2px rgb(245, 245, 245);
-    width: 40%;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 50%;
     height: 30px;
   }
-  /* CONTENEDOR DE INFO DOLAR */
+  /* CONTENEDOR DE INFO DOLAR
   .info-container {
     display: none;
     justify-content: center;
@@ -226,7 +229,7 @@ font-family: "Rokkitt", serif;
     padding: 3px;
     width: 95%;
     height: 80%;
-  }
+  } */
   /* CONTENEDOR DE CALCULADORA */
   .calculadora-container {
     display: flex;
@@ -293,9 +296,10 @@ font-family: "Rokkitt", serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(239, 239, 239);
+    color: rgb(245, 245, 245);
     font-family: "Rokkitt", serif;
     text-transform: uppercase;
+    letter-spacing: 1px;
     width: 75%;
     height: 30%;
   }
@@ -303,7 +307,7 @@ font-family: "Rokkitt", serif;
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 99, 92, 0.9);
+    background-color: rgb(41, 103, 92, 0.9);
     position: absolute;
     top: 0;
     z-index: 30;

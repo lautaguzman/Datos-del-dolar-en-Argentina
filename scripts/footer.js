@@ -1,7 +1,7 @@
 const footer = document.querySelector("#footer");
 
 const footerTitle = document.createElement("h4");
-footerTitle.innerText = `seguime en mis redes 😉`;
+footerTitle.innerText = `¡seguime en mis redes! 😉`;
 footer.append(footerTitle);
 
 const redesContainer = document.createElement("ul");

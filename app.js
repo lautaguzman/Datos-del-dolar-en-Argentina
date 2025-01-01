@@ -24,7 +24,7 @@ function updateCard(title, purchase, sale) {
   saleContainer.append(saleValue);
 
   const infoCard = document.createElement("button");
-  infoCard.innerText = `informacion`;
+  infoCard.innerText = `información`;
 
   card.append(cardTitle, purchaseContainer, saleContainer, infoCard);
 
