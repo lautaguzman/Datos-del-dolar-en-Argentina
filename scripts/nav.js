@@ -48,12 +48,18 @@ const navItemsNames = [
   `contacto`,
   `acerca del sitio`,
 ];
-
+// ARRAY QUE ALMACENA LAS FUNCIONES DE LOS ITEMS DE NAV
+const functionsNavItems = [
+  () => alert("dolares"),
+  () => alert("calculadora"),
+  () => alert("contacto"),
+  () => aboutTheSite(),
+];
 // RECORRO ARRAY DE NAMES LI, CREO ETIQUETAS LI , AGREGO NOMBRES Y FUNCIONES A CADA UNO.
 navItemsNames.forEach((namesLi, index) => {
   const listItem = document.createElement("li");
   listItem.innerHTML = namesLi;
-  // itemsLi.addEventListener("click", functionsNavItems[index]);
+  listItem.addEventListener("click", functionsNavItems[index]);
   navItemsContainer.append(listItem);
 });
 

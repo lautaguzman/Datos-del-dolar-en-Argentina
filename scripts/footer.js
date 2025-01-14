@@ -17,7 +17,7 @@ const iconosRedes = [
 ];
 
 const funcionesRedes = [
-  () => infoPage(),
+  () => aboutTheSite(),
   () => window.open(`https://github.com/lautaguzman`),
   () => window.open(`https://www.linkedin.com/in/lautaro-guzman-8841431b8/`),
   () =>
@@ -30,22 +30,3 @@ iconosRedes.forEach((iconos, index) => {
   redes.addEventListener("click", funcionesRedes[index]);
   redesContainer.append(redes);
 });
-
-function infoPage() {
-  const infoPageContainer = document.createElement("section");
-  infoPageContainer.className = `info-page-container`;
-  footer.append(infoPageContainer);
-
-  infoPageContainer.style.display = `flex`;
-
-  const closeInfoPage = document.createElement("button");
-  closeInfoPage.innerHTML = `<i class="fa-solid fa-xmark fa-2xl" style="color: rgb(239, 239, 239)"></i>`;
-  closeInfoPage.addEventListener("click", () => {
-    infoPageContainer.style.display = "none";
-  });
-  infoPageContainer.append(closeInfoPage);
-
-  const descripcionPage = document.createElement("p");
-  descripcionPage.innerText = `en esta página, podrás encontrar el valor de compra y venta del dólar en Argentina, así como información detallada sobre cada tipo de dólar. Además, cuenta con una calculadora de cambio que te permitirá realizar conversiones de ARS a USD y viceversa. La aplicación utiliza tecnología moderna y API para ofrecer datos precisos y en tiempo real, facilitando la comprensión del mercado cambiario argentino. Esta página fue desarrollada por Lautaro Guzmán.`;
-  infoPageContainer.append(descripcionPage);
-}
