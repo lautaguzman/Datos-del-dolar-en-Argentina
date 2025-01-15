@@ -160,6 +160,7 @@ font-family: "Rokkitt", serif;
   .description-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 95%;
     height: 90vh;
