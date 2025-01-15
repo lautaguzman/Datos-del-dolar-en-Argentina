@@ -152,26 +152,17 @@ font-family: "Rokkitt", serif;
     position: absolute;
     border: none;
     border-radius: 5px;
-    margin-bottom: 85vh;
-    margin-left: 80%;
-    width: 45px;
-    height: 35px;
+    margin-bottom: 92vh;
+    margin-left: 90%;
+    width: 25px;
+    height: 25px;
   }
   .description-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    overflow: auto;
     width: 95%;
-    height: 70vh;
-  }
-  .description-container::-webkit-scrollbar {
-    width: 5px;
-  }
-  .description-container::-webkit-scrollbar-thumb {
-    background-color: rgb(245, 245, 245);
-    border-radius: 5px;
+    height: 90vh;
   }
   .description-container li {
     text-align: center;
@@ -180,7 +171,7 @@ font-family: "Rokkitt", serif;
     font-size: 0.7rem;
     font-family: "Rokkitt", serif;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     line-height: 2.4;
     list-style-type: none;
     margin-top: 10px;
