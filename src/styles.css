@@ -157,19 +157,38 @@ font-family: "Rokkitt", serif;
     width: 45px;
     height: 35px;
   }
-  .info-site-container p {
-    text-align: center;
-    background-color: rgb(245, 245, 245);
-    color: rgb(41, 103, 92);
+  .description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 10px;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-family: "Rokkitt", serif;
-    font-weight: 600;
-    line-height: 2.5;
     overflow: auto;
     width: 95%;
-    height: 75vh;
+    height: 70vh;
+  }
+  .description-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  .description-container::-webkit-scrollbar-thumb {
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+  }
+  .description-container li {
+    text-align: center;
+    color: rgb(245, 245, 245);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-family: "Rokkitt", serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 2.4;
+    list-style-type: none;
+    margin-top: 10px;
+    width: 95%;
+  }
+  .description-container a {
+    color: black;
+    text-decoration: none;
   }
 
   /* MAIN */
