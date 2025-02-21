@@ -50,7 +50,7 @@ const navItemsNames = [
 ];
 // ARRAY QUE ALMACENA LAS FUNCIONES DE LOS ITEMS DE NAV
 const functionsNavItems = [
-  () => alert("dolares"),
+  () => dollarItem(),
   () => alert("calculadora"),
   () => alert("contacto"),
   () => aboutTheSite(),
