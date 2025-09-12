@@ -3,11 +3,13 @@ const main = document.querySelector("#main");
 
 // FUNCION DONDE CREO CARD PARA MOSTRAR LA INFORMACION DEL DOLAR
 function updateCard(title, purchase, sale) {
+  navItemsContainer.style.display = "none";
+
   const card = document.createElement("div");
   card.className = "card-dolar";
 
   const cardTitle = document.createElement("h4");
-  cardTitle.innerText = title;
+  cardTitle.innerText = title; //Actualiza el titulo
 
   const purchaseContainer = document.createElement("section");
   purchaseContainer.innerHTML = `<p>Compra</p>`;
@@ -42,11 +44,16 @@ function apiDolares() {
 
 // Funcion para mostrar los datos de cada tipo de dolar
 function dolares() {
+  main.innerHTML = "";
   apiDolares().then((dataDolar) => {
     if (dataDolar) {
       // Validación en caso de que los datos sean null o undefined
-      dataDolar.forEach((dolar) => {
-        updateCard(`Dólar ${dolar.nombre}`, dolar.compra, dolar.venta);
+      dataDolar.forEach((dolarCard) => {
+        updateCard(
+          `Dólar ${dolarCard.nombre}`,
+          dolarCard.compra,
+          dolarCard.venta
+        );
       });
     } else {
       console.error("No se pudieron cargar los datos del dólar.");
@@ -55,35 +62,3 @@ function dolares() {
 }
 dolares();
 
-// Función genérica para mostrar los datos de un tipo específico de dólar
-// function mostrarDolar(tipo) {
-//   main.innerHTML = ``;
-
-//   apiDolares().then((data) => {
-//     // Buscar el dólar especificado
-//     const dolarData = data.find((dolar) => dolar.nombre === tipo);
-
-//     // Verificar si encontramos el tipo de dólar solicitado
-//     if (dolarData) {
-//       updateCard(
-//         `dólar ${dolarData.nombre}`,
-//         dolarData.compra,
-//         dolarData.venta
-//       );
-//     } else {
-//       console.log(`No se encontró información del Dólar ${tipo}.`);
-//     }
-//   });
-// }
-
-// mostrarDolar("Oficial"); // Para mostrar el Dólar Oficial
-// mostrarDolar("Blue");
-
-// fetch("https://dolarapi.com/v1/dolares")
-//   .then((response) => response.json())
-//   .then((dataDolar) => {
-//
-//   })
-//   .catch((error) => {
-//     console.error("Error al obtener los datos del dólar:", error);
-//   });
