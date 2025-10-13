@@ -33,15 +33,6 @@ function updateCard(title, purchase, sale) {
   main.append(card);
 }
 
-// Función para consumir api de dolares
-function apiDolares() {
-  return fetch("https://dolarapi.com/v1/dolares")
-    .then((response) => response.json()) // Devuelves la promesa para que pueda ser usada en .then
-    .catch((error) => {
-      console.error("Error al obtener los datos de la API:", error);
-    });
-}
-
 // Funcion para mostrar los datos de cada tipo de dolar
 function dolares() {
   main.innerHTML = "";
@@ -61,4 +52,3 @@ function dolares() {
   });
 }
 dolares();
-
