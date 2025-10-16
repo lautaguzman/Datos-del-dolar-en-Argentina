@@ -20,58 +20,60 @@ function calculator() {
 
   calculatorHeader.append(calculatorTitle, calculatorDescription);
 
-  // SECCION DOLAR
-  const sectionDollar = document.createElement("section");
-  sectionDollar.className = "section-dollar";
+  // SECCTION ARS
+  const sectionArs = document.createElement("section");
+  sectionArs.className = "section-ars";
 
-  const labelDollar = document.createElement("label");
-  labelDollar.innerText = `ingresá tus usd`;
+  const labelArs = document.createElement("label");
+  labelArs.innerText = `ingresá tus ars`;
 
-  const dollarAmount = document.createElement("input");
-  dollarAmount.type = "number";
-  dollarAmount.placeholder = "0.00";
+  const arsAmount = document.createElement("input");
+  arsAmount.type = "number";
+  arsAmount.placeholder = "ars";
 
-  sectionDollar.append(labelDollar, dollarAmount);
+  sectionArs.append(labelArs, arsAmount);
 
-  // RESULTADOS
-  const dollarResultsContainer = document.createElement("section");
+  // CONTENEDOR DE RESULTADOS
+  const dollarResultsContainer = document.createElement("div");
   dollarResultsContainer.className = "dollar-results-container";
 
   calculatorContainer.append(
     calculatorHeader,
-    sectionDollar,
+    sectionArs,
     dollarResultsContainer
   );
 
-  // --- Renderizo los tipos de dólar con valor inicial 0 ---
   apiDolares().then((dataDollarResult) => {
-    // dollarResultsContainer.innerHTML = "";
+    dataDollarResult.forEach((dataDollar) => {
+      const sectionDollarResults = document.createElement("section");
+      sectionDollarResults.className = "section-dollar-results";
 
-    dataDollarResult.forEach((dolarResults) => {
-      const nameDollar = document.createElement("p");
-      nameDollar.textContent = dolarResults.nombre + ": ";
+      const nameResults = document.createElement("p");
+      nameResults.innerText = dataDollar.nombre;
 
-      const valueDollar = document.createElement("span");
-      valueDollar.textContent = "100"; // valor inicial en 0
+      const inputResults = document.createElement("input");
+      inputResults.type = "number";
+      inputResults.placeholder = "0.00";
 
-      dollarResultsContainer.appendChild(nameDollar, valueDollar);
+      sectionDollarResults.append(nameResults, inputResults);
+      dollarResultsContainer.append(sectionDollarResults);
 
-      // guardo el span para actualizarlo después
-      // dolarResults.valorSpan = valor;
+      // AGREGO Y ESCUCHO EVENTO A ARS AMOUTN
+      arsAmount.addEventListener("input", () => {
+        // CONVIERTO A NUMERO DECIMAL
+        const pesos = parseFloat(arsAmount.value);
+        // VALIDACION DE QUE LO INGRESADO SEA NUMERO
+        if (isNaN(pesos) || pesos <= 0) {
+          inputResults.value = "";
+          return;
+        }
+
+        //CALCULO DE ARS INGRESADOS Y DOLAR VENTA
+        const conversion = (pesos / dataDollar.venta).toFixed(2);
+
+        // AGREGO EL RESULTADO DEL CALCULO Y LO MUESTRO EN INPUT DE RESULTADOS
+        inputResults.value = conversion;
+      });
     });
-
-    // Escucho cambios en el input
-    // dollarAmount.addEventListener("input", (e) => {
-    //   const usd = parseFloat(e.target.value);
-
-    //   data.forEach((dolar) => {
-    //     if (!usd || usd <= 0) {
-    //       dolar.valorSpan.textContent = "0";
-    //     } else {
-    //       const resultado = (usd * dolar.venta).toFixed(2);
-    //       dolar.valorSpan.textContent = resultado;
-    //     }
-    //   });
-    // });
   });
 }

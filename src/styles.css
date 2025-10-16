@@ -169,32 +169,6 @@ footer {
     height: 25px;
   }
 
-  /* CONTENEDOR DE DOLAR NAMES */
-  .dollar-names-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-  .dollar-names-container li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(245, 245, 245);
-    color: rgb(41, 103, 92);
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    font-family: "Rokkitt", serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    list-style-type: none;
-    width: 70%;
-    height: 40px;
-  }
-
   /* CALCULATOR */
   .calculator-container {
     display: flex;
@@ -205,7 +179,6 @@ footer {
     padding: 5px;
     width: 100%;
     height: 100%;
-    border: solid 2px rgb(41, 103, 92);
   }
 
   .calculator-header {
@@ -216,7 +189,6 @@ footer {
     font-family: "Rokkitt", serif;
     width: 100%;
     height: 20%;
-    border: solid 3px green;
   }
 
   .calculator-header h4 {
@@ -229,7 +201,7 @@ footer {
     font-size: 1rem;
   }
 
-  .section-dollar {
+  .section-ars {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -240,16 +212,77 @@ footer {
     width: 90%;
     height: 20%;
   }
-
-  .section-dollar input {
+  .section-ars label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rokkitt", serif;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 40%;
+  }
+  .section-ars input {
     text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    height: 30%;
   }
 
   .dollar-results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     height: 55%;
-    border: solid 3px brown;
   }
+
+  .section-dollar-results {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(41, 103, 92);
+    color: rgb(245, 245, 245);
+    border-radius: 10px;
+    width: 95%;
+    height: 25px;
+  }
+
+  .section-dollar-results p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rokkitt", serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 60%;
+    height: 95%;
+  }
+  .section-dollar-results input {
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 25%;
+    height: 75%;
+  }
+
+  /*  
+    text-align: center;
+    width: 60%;
+    font-size: 0.7rem;
+    border: solid 2px red;
+    height: 90%;
+  
+
+
+    width: 20%;
+    height: 80%;
+    text-align: center;
+  */
 
   /* ABOUT THE SITE */
   .about-the-site-container {
@@ -343,66 +376,6 @@ footer {
     letter-spacing: 1px;
     width: 50%;
     height: 30px;
-  }
-  /* CONTENEDOR DE CALCULADORA */
-  .calculadora-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 40%;
-  }
-  .calculadora-container p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 99, 92);
-    color: rgb(239, 239, 239);
-    font-family: "Rokkitt", serif;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-radius: 5px;
-    width: 80%;
-    height: 40px;
-  }
-  .calculadora-container input {
-    text-align: center;
-    border: solid 2px rgb(0, 99, 92);
-    height: 30px;
-    width: 65%;
-  }
-  .calculadora-container input::placeholder {
-    color: rgb(0, 99, 92);
-    text-transform: uppercase;
-    font-family: "Rokkitt", serif;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  .calculadora-container button {
-    background-color: rgb(0, 99, 92);
-    color: rgb(239, 239, 239);
-    border: none;
-    font-family: "Rokkitt", serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 10px;
-    width: 45%;
-    height: 25px;
-  }
-  .calculadora-container span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 99, 92);
-    border: solid 2px rgb(0, 99, 92);
-    text-transform: uppercase;
-    font-family: "Rokkitt", serif;
-    font-weight: 600;
-    font-size: 1rem;
-    height: 30px;
-    width: 65%;
   }
 
   /* FOOTER */
