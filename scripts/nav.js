@@ -52,7 +52,7 @@ const navItemsNames = [
 const functionsNavItems = [
   () => dolares(),
   () => calculator(),
-  () => alert("contacto"),
+  () => contact(),
   () => aboutTheSite(),
 ];
 // RECORRO ARRAY DE NAMES LI, CREO ETIQUETAS LI , AGREGO NOMBRES Y FUNCIONES A CADA UNO.
@@ -67,26 +67,3 @@ navItemsNames.forEach((namesLi, index) => {
 function reloadPage() {
   location.reload();
 }
-
-// ARRAY DE NOMBRES ITEMS DE NAV
-// const namesItems = [
-//   `dólar oficial`,
-//   `dólar blue`,
-//   `dólar bolsa`,
-//   `dólar ccl`,
-//   `dólar mayorista`,
-//   `dólar crypto`,
-//   `dólar tarjeta`,
-//   `calculadora`,
-// ];
-
-// ARRAY QUE ALMACENA LAS FUNCIONES DE LOS ITEMS DE NAV
-// const functionsNavItems = [
-//   () => mostrarDolar("Oficial"),
-//   () => mostrarDolar("Blue"),
-//   () => mostrarDolar("Bolsa"),
-//   () => mostrarDolar("Contado con liquidación"),
-//   () => mostrarDolar("Mayorista"),
-//   () => mostrarDolar("Cripto"),
-//   () => mostrarDolar("Tarjeta"),
-// ];

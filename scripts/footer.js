@@ -10,7 +10,7 @@ footer.append(redesContainer);
 
 // ARRAY QUE CONTIENE LOS ICONOS DE MIS REDES
 const iconosRedes = [
-  `<i class="fa-solid fa-info fa-xl" style="rgb(27, 38, 49)"></i>`,
+  `<i class="fa-regular fa-envelope" style="color: #29675c;"></i>`,
   `<i class="fa-brands fa-square-github fa-xl" style="color: #24292e;"></i>`,
   `<i class="fa-brands fa-linkedin fa-xl" style="color: #0077b5;"></i>`,
   `<i class="fa-brands fa-square-instagram fa-xl" style="color: #e1306c;"></i>`,
